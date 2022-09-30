@@ -1,3 +1,4 @@
 variable "ecs-service-name" {
-  type = string
+  type    = string
+  default = "test-svc-name"
 }

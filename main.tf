@@ -9,7 +9,7 @@ data "template_file" "container_tmpl" {
 }
 
 resource "aws_ecs_task_definition" "my_td" {
-  family                   = ""
+  family                   = "test_ts"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
   cpu                      = 512
