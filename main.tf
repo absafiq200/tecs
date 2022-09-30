@@ -15,6 +15,6 @@ resource "aws_ecs_task_definition" "my_td" {
   cpu                      = 512
   memory                   = 1024
   container_definitions    = data.template_file.container_tmpl.rendered
-  task_role_arn            = aws_iam_role_policy.ecs_role_policy.arn
-  execution_role_arn       = aws_iam_role_policy.ecs_role_policy.arn
+  task_role_arn            = aws_iam_role.ecs_role.arn
+  execution_role_arn       = aws_iam_role.ecs_role.arn
 }
