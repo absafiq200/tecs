@@ -1,10 +1,10 @@
 {
-    "name":"${var.container_name}",
-    "image":"${var.imageurl}",
+    "name":"${container_name}",
+    "image":"${imageurl}",
     "essential": true,
     
     "portMappings": [{
-        "ContainerPort": "${var.containerport}"
+        "ContainerPort": "${containerport}"
     }],
     
     "logConfiguration": {
