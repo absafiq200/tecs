@@ -1,5 +1,5 @@
 data "template_file" "container_tmpl" {
-  template = file("container_def.json")
+  template = file("container_def.json.tpl")
 
   vars = {
     "container_name" = "test-td",
