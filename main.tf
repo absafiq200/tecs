@@ -17,4 +17,5 @@ resource "aws_ecs_task_definition" "my_td" {
   memory                   = "1024"
   task_role_arn            = aws_iam_role.ecs_role.arn
   execution_role_arn       = aws_iam_role.ecs_role.arn
+  skip_destroy             = true
 }
