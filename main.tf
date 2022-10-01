@@ -4,7 +4,7 @@ data "template_file" "container_tmpl" {
   vars = {
     "container_name" = "test-td",
     "imageurl" : "absafiq2000/demoapp:latest",
-    "containerport" : var.containerport
+    "containerport" : 8080
   }
 }
 
