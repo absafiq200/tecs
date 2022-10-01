@@ -1,3 +1,4 @@
+[
 {
     "name":"${container_name}",
     "image":"${imageurl}",
@@ -16,3 +17,4 @@
         }
     }
 }
+]
