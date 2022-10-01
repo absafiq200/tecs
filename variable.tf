@@ -4,6 +4,6 @@ variable "ecs-service-name" {
 }
 
 variable "containerport" {
-  type    = int
+  type    = number
   default = 8080
 }
