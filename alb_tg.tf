@@ -23,9 +23,7 @@ resource "aws_alb_target_group" "ecs_alb_target_group" {
     unhealthy_threshold = "2"
   }
 
-  lifecycle {
-    create_before_destroy = true
-  }
+
 }
 
 resource "aws_alb_listener" "http" {
