@@ -2,7 +2,7 @@ resource "aws_lb" "ecs_alb" {
   name                       = "ecs-elb"
   internal                   = false
   load_balancer_type         = "application"
-  security_groups            = [aws_security_group.my_sec_grp.id]
+  security_groups            = [aws_security_group.alb_sg.id]
   subnets                    = var.public_subnets
   enable_deletion_protection = false
 }

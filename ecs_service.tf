@@ -11,11 +11,11 @@ resource "aws_ecs_service" "my_scs_service" {
 
   network_configuration {
     security_groups  = [aws_security_group.ecs_task_sg.id]
-    subnets          = [var.private_subnets]
+    subnets          = [var.private_subnets[0]]
     assign_public_ip = false
   }
 
-  load_balance {
+  load_balancer {
     target_group_arn = aws_alb_target_group.ecs_alb_target_group.arn
     container_name   = "test-td"
     container_port   = 8080
