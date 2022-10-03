@@ -9,7 +9,7 @@ resource "aws_lb" "ecs_alb" {
 
 resource "aws_alb_target_group" "ecs_alb_target_group" {
   name        = "alb-target-group"
-  port        = 80
+  port        = 8080
   protocol    = "HTTP"
   vpc_id      = var.vpc_id
   target_type = "ip"
@@ -22,6 +22,10 @@ resource "aws_alb_target_group" "ecs_alb_target_group" {
     timeout             = "3"
     unhealthy_threshold = "2"
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_alb_listener" "http" {
@@ -32,4 +36,5 @@ resource "aws_alb_listener" "http" {
     target_group_arn = aws_alb_target_group.ecs_alb_target_group.arn
     type             = "forward"
   }
+  depends_on = [aws_alb_target_group.ecs_alb_target_group, aws_lb.ecs_alb]
 }
