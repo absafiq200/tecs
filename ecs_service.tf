@@ -11,7 +11,7 @@ resource "aws_ecs_service" "my_scs_service" {
 
   network_configuration {
     security_groups  = [aws_security_group.ecs_task_sg.id]
-    subnets          = [var.private_subnets[0]]
+    subnets          = [var.public_subnets[0]]
     assign_public_ip = false
   }
 
