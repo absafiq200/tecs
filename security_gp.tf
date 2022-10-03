@@ -35,7 +35,7 @@ resource "aws_security_group" "ecs_task_sg" {
     from_port       = 0
     to_port         = 0
     protocol        = "-1"
-    security_groups = [aws_security_group.alb_sg]
+    security_groups = [aws_security_group.alb_sg.id]
 
   }
 
