@@ -3,7 +3,7 @@ data "template_file" "container_tmpl" {
 
   vars = {
     "container_name" = "test-td",
-    "imageurl" : "absafiq2000/demoapp:latest",
+    "imageurl" : "187942322226.dkr.ecr.us-east-1.amazonaws.com/demoapp:latest",
     "containerport" : 8080
   }
 }
