@@ -7,7 +7,7 @@ resource "aws_iam_role" "ecs_role" {
         Action = "sts:AssumeRole"
         Effect = "Allow"
         Principal = {
-          Service = ["ecs.amazonaws.com", "ecs-tasks.amazonaws.com", "ecr.amazonaws.com"]
+          Service = ["ecs.amazonaws.com", "ecs-tasks.amazonaws.com", "replication.ecr.amazonaws.com"]
         }
       },
     ]
