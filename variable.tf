@@ -32,3 +32,8 @@ variable "to_port_ib" {
   type    = number
   default = 80
 }
+
+variable "vpc_id" {
+    type = string
+    default = "vpc-0e17759f40ea28d3a"
+}
