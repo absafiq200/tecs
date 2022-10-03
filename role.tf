@@ -7,7 +7,7 @@ resource "aws_iam_role" "ecs_role" {
         Action = "sts:AssumeRole"
         Effect = "Allow"
         Principal = {
-          Service = ["ecs.amazonaws.com", "ecs-tasks.amazonaws.com"]
+          Service = ["ecs.amazonaws.com", "ecs-tasks.amazonaws.com", "ecr.amazonaws.com"]
         }
       },
     ]
@@ -25,6 +25,7 @@ resource "aws_iam_role_policy" "ecs_role_policy" {
           "ecs:*",
           "logs:*",
           "cloudwatch:*",
+          "ecr:*",
           "elasticloadbalancing:*"
         ],
         "Resource" : "*",
